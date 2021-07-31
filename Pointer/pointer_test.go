@@ -111,3 +111,15 @@ func Test340(t *testing.T) {
 		assert.Equal(t, 2,result)
 	})
 }
+
+func Test189(t *testing.T) {
+	t.Run("test", func(t *testing.T) {
+		rotate([]int{1,2,3,4,5,6,7},3)
+	})
+}
+
+func Test283(t *testing.T) {
+	t.Run("move_zeroes", func(t *testing.T) {
+		moveZeroes([]int{0,1,0,3,12})
+	})
+}
