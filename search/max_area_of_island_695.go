@@ -18,7 +18,7 @@ func maxAreaOfIsland(grid [][]int) int {
 }
 
 var (
-	// (i+1,j) (i-1,j) (i,j) (i,j+1) (i,j-1)
+	// 分别是 x 轴 和 y 轴 上下左右位置 -- 用于计算
 	dx = []int{1, 0, 0, -1}
 	dy = []int{0, 1, -1, 0}
 )
@@ -30,8 +30,8 @@ func dfs(grid [][]int, i, j int) (res int) {
 		res++
 		for k := 0; k < 4; k++ {
 			mx, my := i+dx[k], j+dy[k]
-			if mx >= 0 && mx <= len(grid) && my >= 0 && my <= len(grid[0]) {
-				res += dfs(grid, i, j)
+			if mx >= 0 && mx < len(grid) && my >= 0 && my < len(grid[0]) {
+				res += dfs(grid, mx, my)
 			}
 		}
 	}
