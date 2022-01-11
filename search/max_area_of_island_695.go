@@ -19,11 +19,13 @@ func maxAreaOfIsland(grid [][]int) int {
 
 var (
 	// 分别是 x 轴 和 y 轴 上下左右位置 -- 用于计算
+	// 辅函数
 	dx = []int{1, 0, 0, -1}
 	dy = []int{0, 1, -1, 0}
 )
 
 // 深度搜索 (创建数组原因：对于四个方向的遍历，可以创造辅函数，每相邻两位即为上下左右四个方向之一)
+// 最重要的是找到边界值
 func dfs(grid [][]int, i, j int) (res int) {
 	if grid[i][j] == 1 {
 		grid[i][j] = 0
