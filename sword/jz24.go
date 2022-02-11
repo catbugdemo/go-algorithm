@@ -1,16 +1,16 @@
 package sword
 
-func ReverseList(pHead *ListNode) *ListNode {
-	// write code here
-	if pHead == nil || pHead.Next == nil {
-		return pHead
+// 将一个节点作为临时节点进行操作
+func reverseList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return nil
 	}
-	vide := new(ListNode)
-	for pHead != nil {
-		next := pHead.Next
-		pHead.Next = vide
-		vide = pHead
-		pHead = next
+	var prev *ListNode
+	for head != nil {
+		next := head.Next
+		head.Next = prev
+		prev = head
+		head = next
 	}
-	return vide
+	return prev
 }

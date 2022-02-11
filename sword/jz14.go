@@ -51,5 +51,5 @@ func cuttingRope2(n int) int {
 	default:
 		res = math.Pow(3, float64(parts))
 	}
-	return int(res)
+	return int(res) % (1e9 + 7)
 }

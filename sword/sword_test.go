@@ -122,3 +122,80 @@ func TestJz13(t *testing.T) {
 		assert.Equal(t, 3, count)
 	})
 }
+
+func TestJz15(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		weight := hammingWeight(11)
+		assert.Equal(t, 3, weight)
+	})
+}
+
+func TestJz16(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		pow := myPow(2, -2)
+		assert.Equal(t, float64(1024), pow)
+	})
+}
+
+func TestJz17(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		ints := printNumbers(1)
+		fmt.Println(ints)
+	})
+}
+
+func TestJz20(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		number := isNumber("1 ")
+		fmt.Println(number)
+	})
+}
+
+func TestJz23(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		top := new(ListNode)
+		top.Val = 1
+
+		l1 := top
+		l2 := &ListNode{
+			Val: 2,
+		}
+		l1.Next = l2
+
+		l3 := &ListNode{
+			Val: 3,
+		}
+		l2.Next = l3
+
+		l4 := &ListNode{
+			Val: 4,
+		}
+		l3.Next = l4
+
+		l5 := &ListNode{
+			Val: 5,
+		}
+		l4.Next = l5
+		l5.Next = l3
+		loop := EntryNodeOfLoop(top)
+		fmt.Println(loop)
+	})
+}
+
+func TestJz24(t *testing.T) {
+	node := NewListNode([]int{1, 2, 3, 4, 5})
+	list := reverseList(node)
+	fmt.Println(list)
+}
+
+func TestJz25(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		l1 := NewListNode([]int{1, 2, 3})
+		l2 := NewListNode([]int{1, 3, 4})
+		mergeTwoLists(l1, l2)
+	})
+
+	t.Run("f", func(t *testing.T) {
+		mergeTwoLists(nil, nil)
+	})
+}
