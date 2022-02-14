@@ -199,3 +199,25 @@ func TestJz25(t *testing.T) {
 		mergeTwoLists(nil, nil)
 	})
 }
+
+func TestJz26(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+	})
+}
+
+func TestJz27(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		top := &TreeNode{
+			Val: 4,
+		}
+		top.Left = &TreeNode{Val: 2}
+		top.Right = &TreeNode{Val: 7}
+		top.Left.Left = &TreeNode{Val: 1}
+		top.Left.Right = &TreeNode{Val: 3}
+		top.Right.Left = &TreeNode{Val: 6}
+		top.Right.Right = &TreeNode{Val: 9}
+		mirrorTree(top)
+
+	})
+
+}
