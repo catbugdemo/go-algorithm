@@ -86,7 +86,7 @@ func TestJz5(t *testing.T) {
 
 func TestJz9(t *testing.T) {
 	t.Run("true", func(t *testing.T) {
-		obj := Constructor()
+		obj := Constructors()
 		obj.AppendTail(3)
 		head := obj.DeleteHead()
 		deleteHead := obj.DeleteHead()
@@ -219,5 +219,48 @@ func TestJz27(t *testing.T) {
 		mirrorTree(top)
 
 	})
+}
 
+func TestJz28(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		top := &TreeNode{Val: 1}
+		top.Left = &TreeNode{Val: 2}
+		top.Right = &TreeNode{Val: 2}
+		top.Left.Right = &TreeNode{Val: 3}
+		top.Right.Right = &TreeNode{Val: 3}
+		check := isSymmetric(top)
+		fmt.Println(check)
+	})
+	t.Run("f", func(t *testing.T) {
+		symmetric := isSymmetric(nil)
+		fmt.Println(symmetric)
+	})
+}
+
+func TestJz31(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		check := validateStackSequences([]int{1, 2, 3, 4, 5}, []int{4, 5, 3, 2, 1})
+		fmt.Println(check)
+	})
+	t.Run("f", func(t *testing.T) {
+		check := validateStackSequences([]int{1, 2, 3, 0}, []int{2, 1, 3, 0})
+		fmt.Println(check)
+	})
+}
+
+func TestJz32(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		root := &TreeNode{Val: 3}
+		root.Left = &TreeNode{Val: 9}
+		root.Right = &TreeNode{Val: 20}
+		root.Right.Left = &TreeNode{Val: 15}
+		root.Right.Right = &TreeNode{Val: 7}
+		order := levelOrder(root)
+		fmt.Println(order)
+	})
+	t.Run("t", func(t *testing.T) {
+		root := &TreeNode{Val: 1}
+		order := levelOrder(root)
+		fmt.Println(order)
+	})
 }
