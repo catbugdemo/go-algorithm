@@ -287,3 +287,17 @@ func TestJz34(t *testing.T) {
 		fmt.Println(sum)
 	})
 }
+
+func TestJz39(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		element := majorityElement([]int{1, 2, 3, 2, 2, 2, 5, 4, 2})
+		assert.Equal(t, 2, element)
+	})
+}
+
+func TestJz40(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		numbers := getLeastNumbers([]int{3, 2, 1}, 2)
+		fmt.Println(numbers)
+	})
+}
