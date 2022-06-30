@@ -301,3 +301,18 @@ func TestJz40(t *testing.T) {
 		fmt.Println(numbers)
 	})
 }
+
+func TestJz42(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		array := maxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4})
+		assert.Equal(t, 6, array)
+	})
+}
+
+/*func TestJz43(t *testing.T) {
+	t.Run("t", func(t *testing.T) {
+		one := countDigitOne(12)
+		assert.Equal(t, 5, one)
+	})
+}
+*/
